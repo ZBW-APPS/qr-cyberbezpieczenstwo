@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071325">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Uwaga na nieznane kody QR!</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; }
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; margin: 0; }
+    body {
+      min-height: 100svh;
+      display: grid;
+      align-items: center;
+      overflow-x: hidden;
+      background:
+        radial-gradient(ellipse at 82% 54%, rgba(240,47,65,.24) 0, transparent 43%),
+        radial-gradient(ellipse at 15% 92%, rgba(0,148,255,.13) 0, transparent 52%),
+        linear-gradient(140deg,#091b30,#0b1324 58%,#180c20);
+      color: #f3f8ff;
+    }
+    .scene { isolation: isolate; position:relative; width:100%; min-height:100svh; display:flex; align-items:center; }
+    .devil {
+      position: absolute; z-index:-1; pointer-events:none; user-select:none;
+      right: clamp(24px,5vw,100px);
+      top: 50%; bottom: auto;
+      transform: translateY(-50%);
+      width: min(39vw,650px); height: auto;
+      max-height: 82svh; object-fit:contain; object-position:center;
+      opacity:.88;
+      filter: drop-shadow(0 0 75px rgba(228,34,58,.26)) saturate(.95);
+    }
+    .scene::before {
+      content:"";position:absolute;inset:0;z-index:-1;
+      background:linear-gradient(90deg,rgba(5,13,28,.4),rgba(5,13,28,.04) 70%);
+    }
+    main { position:relative; z-index:1; padding:64px clamp(24px,5vw,110px); max-width: 64vw; }
+    h1 { margin:0; max-width:1000px; line-height:1.07; letter-spacing:-.055em; font-weight:900; text-wrap:balance; }
+    .question { display:block; font-size:clamp(2.4rem,6vw,6.2rem); text-shadow:0 3px 22px rgba(0,0,0,.36); }
+    .warning { display:block; margin-top:.65em; font-size:clamp(2.8rem,7.2vw,7.2rem); color:#ff4a59; text-shadow:0 0 43px rgba(255,45,75,.23); }
+    @media(max-width:720px){
+      .scene {
+        flex-direction:column; justify-content:center; text-align:center;
+        padding:36px 18px 18px;
+      }
+      .scene::before { background:linear-gradient(180deg,rgba(5,13,28,.18),rgba(5,13,28,.13)); }
+      .devil {
+        position:relative; order:2; inset:auto; transform:none;
+        width:min(78vw,400px); max-height:46svh;
+        margin:20px auto 0; opacity:.92;
+      }
+      main { order:1; width:100%; max-width:600px; padding:0; }
+      .question { font-size:clamp(2.0rem,8.5vw,4rem); }
+      .warning { font-size:clamp(2.4rem,9.5vw,4.6rem); }
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <img class="devil" src="diabelek.png" alt="" aria-hidden="true">
+    <main>
+      <h1>
+        <span class="question">DLACZEGO SKANUJESZ NIEZNANE KODY QR?</span>
+        <span class="warning">TO NIEBEZPIECZNE!</span>
+      </h1>
+    </main>
+  </div>
+</body>
+</html>
